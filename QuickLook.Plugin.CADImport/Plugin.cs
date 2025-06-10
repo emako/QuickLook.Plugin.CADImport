@@ -26,8 +26,10 @@ public class Plugin : IViewer
 {
     private static readonly string[] _extensions =
     [
-        ".dwg",
-        ".dxf",
+        ".dwg", // AutoCAD Binary Drawing Format
+        ".dxf", // AutoCAD Drawing Exchange Format
+        ".plt", // Hewlett-Packard Graphics Language
+        ".cgm", // Computer Graphics Metafile
     ];
 
     private RenderPanel _rp;
