@@ -339,6 +339,8 @@ internal partial class CADImaging : IDisposable
 
         ObjEntity.cadImage = cadImage;
 
+        SetBackColor(IsDark);
+
         if (cadPictBox.BackColor == Color.White)
         {
             if (cadImage != null)
@@ -365,6 +367,6 @@ internal partial class CADImaging : IDisposable
 
     public void Invalidate()
     {
-        cadPictBox.Invalidate();
+        cadPictBox?.Invalidate();
     }
 }

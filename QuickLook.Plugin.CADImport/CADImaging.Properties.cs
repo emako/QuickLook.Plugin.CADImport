@@ -98,6 +98,8 @@ internal partial class CADImaging
 
     public bool IsLoaded => cadImage != null;
 
+    public bool IsDark { get; set; } = false;
+
     public bool IsNormalDrawMode => cadImage.DrawMode == CADDrawMode.Normal;
 
     public bool IsBlackBackColor => cadPictBox.BackColor == Color.Black;

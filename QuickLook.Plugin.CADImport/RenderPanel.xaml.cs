@@ -48,4 +48,9 @@ public partial class RenderPanel : UserControl, IDisposable
         cadImaging.LoadFile(path);
         cadPictBox.Invalidate();
     }
+
+    public void SetTheme(bool isDark)
+    {
+        cadImaging.IsDark = isDark;
+    }
 }

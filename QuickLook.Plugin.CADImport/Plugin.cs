@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using QuickLook.Common.Helpers;
 using QuickLook.Common.Plugin;
 using System.IO;
 using System.Linq;
@@ -54,6 +55,7 @@ public class Plugin : IViewer
         context.Title = $"{Path.GetFileName(path)}";
 
         _rp = new RenderPanel();
+        _rp.SetTheme(OSThemeHelper.AppsUseDarkTheme());
         _rp.LoadCadFile(path);
 
         context.ViewerContent = _rp;
