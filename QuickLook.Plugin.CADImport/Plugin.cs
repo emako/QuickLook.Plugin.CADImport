@@ -17,6 +17,7 @@
 
 using QuickLook.Common.Helpers;
 using QuickLook.Common.Plugin;
+using System;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -33,6 +34,8 @@ public class Plugin : IViewer
         ".cgm", // Computer Graphics Metafile
     ];
 
+    private static double _width = 900;
+    private static double _height = 600;
     private RenderPanel _rp;
     public int Priority => 0;
 
@@ -47,7 +50,7 @@ public class Plugin : IViewer
 
     public void Prepare(string path, ContextObject context)
     {
-        context.PreferredSize = new Size { Width = 900, Height = 600 };
+        context.PreferredSize = new Size { Width = _width, Height = _height };
     }
 
     public void View(string path, ContextObject context)
@@ -64,5 +67,12 @@ public class Plugin : IViewer
 
     public void Cleanup()
     {
+        _width = _rp.ActualWidth;
+        _height = _rp.ActualHeight;
+
+        _rp?.Dispose();
+        _rp = null;
+
+        GC.SuppressFinalize(this);
     }
 }

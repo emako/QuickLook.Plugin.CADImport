@@ -66,13 +66,16 @@ internal partial class CADImaging : IDisposable
         cadPictBox.MouseDoubleClick += OnCADPictBoxMouseDoubleClick;
         cadPictBox.VisibleChanged += (_, _) =>
         {
-            if (cadPictBox.Visible)
-            {
-                ResetScaling();
-                StatusUpdated?.Invoke(this, CADImagingEventArgs.NewStatusUpdatedEventArgs(RealScale));
-                RealPointUpdated?.Invoke(this, CADImagingEventArgs.NewRealPointUpdatedEventArgs(GetRealPoint((int)positionPrev.X, (int)positionPrev.Y)));
-                OffsetPointUpdated?.Invoke(this, CADImagingEventArgs.NewOffsetPointUpdatedEventArgs(GetRealPoint((int)positionPrev.X, (int)positionPrev.Y), OriginalPoint));
-            }
+            if (cadImage == null || cadPictBox == null)
+                return;
+
+            if (!cadPictBox.Visible)
+                return;
+
+            ResetScaling();
+            StatusUpdated?.Invoke(this, CADImagingEventArgs.NewStatusUpdatedEventArgs(RealScale));
+            RealPointUpdated?.Invoke(this, CADImagingEventArgs.NewRealPointUpdatedEventArgs(GetRealPoint((int)positionPrev.X, (int)positionPrev.Y)));
+            OffsetPointUpdated?.Invoke(this, CADImagingEventArgs.NewOffsetPointUpdatedEventArgs(GetRealPoint((int)positionPrev.X, (int)positionPrev.Y), OriginalPoint));
         };
     }
 
