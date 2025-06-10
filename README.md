@@ -6,10 +6,12 @@ This plugin allows [QuickLook](https://github.com/QL-Win/QuickLook) to preview C
 
 ## Supported extensions
 
-The following file extensions are treated as PlantUML files.
+The following file extensions are treated as CAD files.
 
-- dwg
-- dxf
+- dwg - AutoCAD Binary Drawing Format
+- dxf - AutoCAD Drawing Exchange Format
+- plt - Hewlett-Packard Graphics Language
+- cgm - Computer Graphics Metafile
 
 ## Licenses
 
