@@ -13,6 +13,12 @@ The following file extensions are treated as CAD files.
 - plt - Hewlett-Packard Graphics Language
 - cgm - Computer Graphics Metafile
 
+## Usage
+
+1. Scroll mouse wheel to zoom in/out.
+2. Double left click to reset the scaling.
+3. Right click and drag to pan the view.
+
 ## Licenses
 
 ![GPL-v3](https://www.gnu.org/graphics/gplv3-127x51.png)
