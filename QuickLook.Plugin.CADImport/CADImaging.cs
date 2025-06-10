@@ -68,6 +68,7 @@ internal partial class CADImaging : IDisposable
         {
             if (cadPictBox.Visible)
             {
+                ResetScaling();
                 StatusUpdated?.Invoke(this, CADImagingEventArgs.NewStatusUpdatedEventArgs(RealScale));
                 RealPointUpdated?.Invoke(this, CADImagingEventArgs.NewRealPointUpdatedEventArgs(GetRealPoint((int)positionPrev.X, (int)positionPrev.Y)));
                 OffsetPointUpdated?.Invoke(this, CADImagingEventArgs.NewOffsetPointUpdatedEventArgs(GetRealPoint((int)positionPrev.X, (int)positionPrev.Y), OriginalPoint));
