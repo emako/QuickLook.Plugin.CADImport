@@ -17,7 +17,7 @@ The following file extensions are treated as CAD files.
 
 1. Scroll mouse wheel to zoom in/out.
 2. Double left click to reset the scaling.
-3. Right click and drag to pan the view.
+3. Right press and drag to pan the view.
 
 ## Licenses
 
