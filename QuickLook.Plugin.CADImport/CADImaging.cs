@@ -119,7 +119,7 @@ internal partial class CADImaging : IDisposable
 
     private void OnCADPictBoxMouseDown(object sender, MouseEventArgs e)
     {
-        if (e.Button == MouseButtons.Right)
+        if (e.Button == MouseButtons.Left)
         {
             CursorUpdated?.Invoke(this, new CADImagingEventArgs(CADImagingEventArgs.EventType.Cursor, [Cursors.Hand]));
             currentXClickPosition = e.X;
